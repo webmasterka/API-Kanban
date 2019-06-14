@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>API - Kanban</title>
+  <link rel="stylesheet" type="text/css" href="vendor/normalize.css">
+  <link rel="stylesheet" type="text/css" href="vendor/flickity.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="board" class="board">
+        <h1>Kanban board</h1>
+        <button class="create-column">Add a column</button>
+        <div class="column-container row clearfix"></div>
+      </div>
+      
+      <script id="column-template" type="x-tmpl-mustache">
+          <div class="column col-m-3 col-s-6"> 
+            <button class="btn-delete">X</button>
+            <h2 class="column-title">{{ name }}</h2>
+            <ul id={{ id }} class="column-card-list"></ul>
+            <div class="add"><button class="add-card">Add a card</button></div>
+          </div>  
+      </script>
+      <script id="card-template" type="x-tmpl-mustache">
+        <div class="card row clearfix">
+          <div class="col-m-12 col-s-12">
+          <button class="btn-delete card-small">x</button>  
+          <p class="card-description">{{ description }}</p>
+          </div>
+      </script>
+    
+  
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.6.0/Sortable.min.js"></script>
+      <script type="text/javascript" src="js/column.js"></script>
+      <script type="text/javascript" src="js/card.js"></script>
+      <script type="text/javascript" src="js/board.js"></script>
+      <script type="text/javascript" src="js/app.js"></script>
+  </body>
+
+</html>
